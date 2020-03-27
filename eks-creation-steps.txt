@@ -1,0 +1,14 @@
+https://docs.aws.amazon.com/eks/latest/userguide/getting-started-console.html
+
+1- create CloudFormation Role to admin AWS
+2- create Cloudformation stack to create eksServiceRole from eksServiceRole.json
+3- create the eks-workspace instance & install awscli/kubectl/aws-iam-authenticator
+4- create the eks cluster for the console
+5- create the ec2 Role for eksAdmin and attach it to the eks-workspace instance
+6- update-kubeconfig eks to the instance with the user that create the cluster
+7- install aws-auth-cm.yaml (config-map) then add the role to configmap to allow the role to be master
+8- re update-kubeconfig
+9- remove the user creator
+10- create Cloudformation stack to create EKS worker node role from s3
+11- create the node group and attached it to the cluster amazon-eks-nodegroup-with-mixed-instances.yml
+
